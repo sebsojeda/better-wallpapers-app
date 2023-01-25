@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "unifiedblurhash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iankoex/UnifiedBlurHash",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e9193b062f98df0b7c26057085e33e49ba5b9d53"
+      }
+    }
+  ],
+  "version" : 2
+}
