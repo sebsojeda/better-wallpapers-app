@@ -7,16 +7,13 @@
 
 import SwiftUI
 
-enum Tab {
-    case wallpaper, settings
-}
-
 struct NavigationView: View {
     @Binding var currentTab: Tab
     
     var body: some View {
         HStack {
             Text("Better Wallpapers")
+                .font(.headline)
             
             Spacer()
             
@@ -33,12 +30,12 @@ struct NavigationView: View {
             }
         }
         .padding()
+        .zIndex(1)
         .background(Color(.textBackgroundColor))
-        .transaction { transaction in transaction.animation = nil }
     }
     
     private func transitionTo(_ tab: Tab) {
-        withAnimation {
+        withAnimation(.easeInOut) {
             currentTab = tab
         }
     }
@@ -46,6 +43,6 @@ struct NavigationView: View {
 
 struct NavigationView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView(currentTab: .constant(.wallpaper))
+        NavigationView(currentTab: .constant(.settings))
     }
 }

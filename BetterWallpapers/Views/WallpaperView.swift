@@ -1,5 +1,5 @@
 //
-//  Preview.swift
+//  WallpaperView.swift
 //  BetterWallpapers
 //
 //  Created by Sebastian Ojeda on 1/17/23.
@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct WallpaperView: View, Sendable {
-    @EnvironmentObject var manager: WallpaperManager
+    @EnvironmentObject var controller: WallpaperController
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Button(action: manager.fetchRandomWallpaper) {
-                WallpaperPreview(currentWallpaper: manager.fetcher.currentWallpaper)
+        VStack {
+            Button(action: fetchRandomWallpaper) {
+                ImageView(currentWallpaper: controller.currentWallpaper)
                     .overlay {
-                        if manager.fetcher.isFetching || manager.downloader.isDownloading {
+                        if controller.isLoading {
                             ProgressView()
                                 .frame(width: 24, height: 24)
                                 .foregroundColor(Color.white)
@@ -33,15 +33,15 @@ struct WallpaperView: View, Sendable {
                         }
                     }
                     .overlay(alignment: .bottomLeading) {
-                        if manager.fetcher.currentWallpaper.authorName != nil {
-                            if manager.fetcher.currentWallpaper.authorUrl != nil {
-                                Link("By \(manager.fetcher.currentWallpaper.authorName!)",
-                                     destination: manager.fetcher.currentWallpaper.authorUrl!)
-                                    .foregroundColor(Color.white)
+                        if controller.currentWallpaper.authorName != nil {
+                            if controller.currentWallpaper.authorUrl != nil {
+                                Link("By \(controller.currentWallpaper.authorName!)",
+                                     destination: controller.currentWallpaper.authorUrl!)
+                                    .foregroundColor(.white)
                                     .padding()
                             } else {
-                                Text("By \(manager.fetcher.currentWallpaper.authorName!)")
-                                    .foregroundColor(Color.white)
+                                Text("By \(controller.currentWallpaper.authorName!)")
+                                    .foregroundColor(.white)
                                     .padding()
                             }
                         }
@@ -55,14 +55,16 @@ struct WallpaperView: View, Sendable {
         .background(Color(.textBackgroundColor))
     }
     
+    func fetchRandomWallpaper() {
+        if !controller.isLoading {
+            controller.fetchRandomWallpaper()
+        }
+    }
 }
 
 struct WallpaperView_Previews: PreviewProvider {
     static var previews: some View {
         WallpaperView()
-            .environmentObject(WallpaperManager(fetcher: WallpaperFetcher(),
-                                                downloader: WallpaperDownloader(),
-                                                scheduler: WallpaperScheduler(),
-                                                settings: WallpaperSettings()))
+            .environmentObject(WallpaperController())
     }
 }

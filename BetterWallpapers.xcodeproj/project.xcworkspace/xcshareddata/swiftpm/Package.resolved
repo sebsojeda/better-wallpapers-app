@@ -1,12 +1,30 @@
 {
   "pins" : [
     {
+      "identity" : "launchatlogin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/LaunchAtLogin",
+      "state" : {
+        "branch" : "main",
+        "revision" : "7ad6331f9c38953eb1ce8737758e18f7607e984a"
+      }
+    },
+    {
       "identity" : "unifiedblurhash",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/iankoex/UnifiedBlurHash",
       "state" : {
         "branch" : "main",
         "revision" : "e9193b062f98df0b7c26057085e33e49ba5b9d53"
+      }
+    },
+    {
+      "identity" : "url-image",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dmytro-anokhin/url-image",
+      "state" : {
+        "revision" : "4042f955f1fdff00ced85545e1eecdbf969b5cd0",
+        "version" : "3.1.1"
       }
     }
   ],

@@ -14,17 +14,18 @@
 		493B874F29774F6800B6E525 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B874E29774F6800B6E525 /* Wallpaper.swift */; };
 		493B87512977520100B6E525 /* WallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B87502977520100B6E525 /* WallpaperView.swift */; };
 		4990BD802980F56000D2B4D9 /* UnifiedBlurHash in Frameworks */ = {isa = PBXBuildFile; productRef = 4990BD7F2980F56000D2B4D9 /* UnifiedBlurHash */; };
-		4990BD822980F9FF00D2B4D9 /* WallpaperSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BD812980F9FF00D2B4D9 /* WallpaperSettings.swift */; };
-		4990BD852981077900D2B4D9 /* WallpaperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BD842981077900D2B4D9 /* WallpaperManager.swift */; };
-		4990BD872981154900D2B4D9 /* WallpaperScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BD862981154900D2B4D9 /* WallpaperScheduler.swift */; };
+		4990BD822980F9FF00D2B4D9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BD812980F9FF00D2B4D9 /* Settings.swift */; };
+		4990BD872981154900D2B4D9 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BD862981154900D2B4D9 /* Scheduler.swift */; };
 		4990BD892981D9C200D2B4D9 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BD882981D9C200D2B4D9 /* Fetcher.swift */; };
-		49A9AC65297919520089C31A /* WallpaperFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A9AC64297919520089C31A /* WallpaperFetcher.swift */; };
-		49A9AC6729791B200089C31A /* WallpaperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A9AC6629791B200089C31A /* WallpaperPreview.swift */; };
-		49A9AC6929792B320089C31A /* WallpaperDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A9AC6829792B320089C31A /* WallpaperDownloader.swift */; };
-		49A9AC6C297931C10089C31A /* Wallpaper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49A9AC6A297931C10089C31A /* Wallpaper.xcdatamodeld */; };
+		49A9AC6729791B200089C31A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A9AC6629791B200089C31A /* ImageView.swift */; };
 		49A9AC702979E3E20089C31A /* ActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A9AC6F2979E3E20089C31A /* ActionsView.swift */; };
 		49A9AC74297BBD360089C31A /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A9AC73297BBD360089C31A /* NavigationView.swift */; };
 		49A9AC76297BC4E00089C31A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A9AC75297BC4E00089C31A /* SettingsView.swift */; };
+		49D80ABC2981E65D00748119 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D80ABB2981E65D00748119 /* Downloader.swift */; };
+		49D80AC22982707100748119 /* WallpaperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D80AC12982707100748119 /* WallpaperController.swift */; };
+		49D80AC52982794900748119 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D80AC42982794900748119 /* TagsView.swift */; };
+		49D80AC829839E1E00748119 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 49D80AC729839E1E00748119 /* LaunchAtLogin */; };
+		49D80ACB298483CD00748119 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 49D80ACA298483CD00748119 /* URLImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,18 +37,16 @@
 		4910C7CE2971EB51009080DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		493B874E29774F6800B6E525 /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
 		493B87502977520100B6E525 /* WallpaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperView.swift; sourceTree = "<group>"; };
-		4990BD812980F9FF00D2B4D9 /* WallpaperSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperSettings.swift; sourceTree = "<group>"; };
-		4990BD832980FDCB00D2B4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		4990BD842981077900D2B4D9 /* WallpaperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperManager.swift; sourceTree = "<group>"; };
-		4990BD862981154900D2B4D9 /* WallpaperScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperScheduler.swift; sourceTree = "<group>"; };
+		4990BD812980F9FF00D2B4D9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4990BD862981154900D2B4D9 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		4990BD882981D9C200D2B4D9 /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
-		49A9AC64297919520089C31A /* WallpaperFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperFetcher.swift; sourceTree = "<group>"; };
-		49A9AC6629791B200089C31A /* WallpaperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperPreview.swift; sourceTree = "<group>"; };
-		49A9AC6829792B320089C31A /* WallpaperDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperDownloader.swift; sourceTree = "<group>"; };
-		49A9AC6B297931C10089C31A /* Wallpaper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wallpaper.xcdatamodel; sourceTree = "<group>"; };
+		49A9AC6629791B200089C31A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		49A9AC6F2979E3E20089C31A /* ActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsView.swift; sourceTree = "<group>"; };
 		49A9AC73297BBD360089C31A /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		49A9AC75297BC4E00089C31A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		49D80ABB2981E65D00748119 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		49D80AC12982707100748119 /* WallpaperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperController.swift; sourceTree = "<group>"; };
+		49D80AC42982794900748119 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D80AC829839E1E00748119 /* LaunchAtLogin in Frameworks */,
+				49D80ACB298483CD00748119 /* URLImage in Frameworks */,
 				4990BD802980F56000D2B4D9 /* UnifiedBlurHash in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,22 +83,12 @@
 		4910C7BC2971D628009080DA /* BetterWallpapers */ = {
 			isa = PBXGroup;
 			children = (
-				4990BD832980FDCB00D2B4D9 /* Info.plist */,
 				4910C7BD2971D628009080DA /* BetterWallpapersApp.swift */,
-				4990BD882981D9C200D2B4D9 /* Fetcher.swift */,
-				4910C7CE2971EB51009080DA /* ContentView.swift */,
-				49A9AC73297BBD360089C31A /* NavigationView.swift */,
-				493B87502977520100B6E525 /* WallpaperView.swift */,
-				49A9AC75297BC4E00089C31A /* SettingsView.swift */,
-				49A9AC6F2979E3E20089C31A /* ActionsView.swift */,
-				493B874E29774F6800B6E525 /* Wallpaper.swift */,
-				49A9AC64297919520089C31A /* WallpaperFetcher.swift */,
-				4990BD862981154900D2B4D9 /* WallpaperScheduler.swift */,
-				4990BD842981077900D2B4D9 /* WallpaperManager.swift */,
-				4990BD812980F9FF00D2B4D9 /* WallpaperSettings.swift */,
-				49A9AC6829792B320089C31A /* WallpaperDownloader.swift */,
-				49A9AC6629791B200089C31A /* WallpaperPreview.swift */,
-				49A9AC6A297931C10089C31A /* Wallpaper.xcdatamodeld */,
+				49D80ABE2981EFB700748119 /* Models */,
+				49D80ABD2981EF8900748119 /* Views */,
+				49D80AC3298271F500748119 /* Controllers */,
+				49D80ABA2981DC8700748119 /* Utils */,
+				4990BD812980F9FF00D2B4D9 /* Settings.swift */,
 				4910C7C12971D629009080DA /* Assets.xcassets */,
 				4910C7C62971D629009080DA /* BetterWallpapers.entitlements */,
 				4910C7C32971D629009080DA /* Preview Content */,
@@ -120,6 +111,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		49D80ABA2981DC8700748119 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				49D80ABB2981E65D00748119 /* Downloader.swift */,
+				4990BD882981D9C200D2B4D9 /* Fetcher.swift */,
+				4990BD862981154900D2B4D9 /* Scheduler.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		49D80ABD2981EF8900748119 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4910C7CE2971EB51009080DA /* ContentView.swift */,
+				49A9AC73297BBD360089C31A /* NavigationView.swift */,
+				49A9AC6629791B200089C31A /* ImageView.swift */,
+				493B87502977520100B6E525 /* WallpaperView.swift */,
+				49A9AC6F2979E3E20089C31A /* ActionsView.swift */,
+				49A9AC75297BC4E00089C31A /* SettingsView.swift */,
+				49D80AC42982794900748119 /* TagsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		49D80ABE2981EFB700748119 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				493B874E29774F6800B6E525 /* Wallpaper.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		49D80AC3298271F500748119 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49D80AC12982707100748119 /* WallpaperController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +169,8 @@
 			name = BetterWallpapers;
 			packageProductDependencies = (
 				4990BD7F2980F56000D2B4D9 /* UnifiedBlurHash */,
+				49D80AC729839E1E00748119 /* LaunchAtLogin */,
+				49D80ACA298483CD00748119 /* URLImage */,
 			);
 			productName = BetterWallpapers;
 			productReference = 4910C7BA2971D628009080DA /* BetterWallpapers.app */;
@@ -169,6 +202,8 @@
 			mainGroup = 4910C7B12971D628009080DA;
 			packageReferences = (
 				4990BD7E2980F56000D2B4D9 /* XCRemoteSwiftPackageReference "UnifiedBlurHash" */,
+				49D80AC629839E1E00748119 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				49D80AC9298483CD00748119 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 4910C7BB2971D628009080DA /* Products */;
 			projectDirPath = "";
@@ -196,17 +231,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4990BD872981154900D2B4D9 /* WallpaperScheduler.swift in Sources */,
-				4990BD852981077900D2B4D9 /* WallpaperManager.swift in Sources */,
-				49A9AC65297919520089C31A /* WallpaperFetcher.swift in Sources */,
-				49A9AC6729791B200089C31A /* WallpaperPreview.swift in Sources */,
-				4990BD822980F9FF00D2B4D9 /* WallpaperSettings.swift in Sources */,
+				4990BD872981154900D2B4D9 /* Scheduler.swift in Sources */,
+				49D80AC22982707100748119 /* WallpaperController.swift in Sources */,
+				49A9AC6729791B200089C31A /* ImageView.swift in Sources */,
+				4990BD822980F9FF00D2B4D9 /* Settings.swift in Sources */,
 				49A9AC74297BBD360089C31A /* NavigationView.swift in Sources */,
 				4910C7BE2971D628009080DA /* BetterWallpapersApp.swift in Sources */,
-				49A9AC6929792B320089C31A /* WallpaperDownloader.swift in Sources */,
 				4990BD892981D9C200D2B4D9 /* Fetcher.swift in Sources */,
 				49A9AC702979E3E20089C31A /* ActionsView.swift in Sources */,
-				49A9AC6C297931C10089C31A /* Wallpaper.xcdatamodeld in Sources */,
+				49D80ABC2981E65D00748119 /* Downloader.swift in Sources */,
+				49D80AC52982794900748119 /* TagsView.swift in Sources */,
 				493B874F29774F6800B6E525 /* Wallpaper.swift in Sources */,
 				493B87512977520100B6E525 /* WallpaperView.swift in Sources */,
 				4910C7CF2971EB51009080DA /* ContentView.swift in Sources */,
@@ -422,6 +456,22 @@
 				kind = branch;
 			};
 		};
+		49D80AC629839E1E00748119 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		49D80AC9298483CD00748119 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -430,20 +480,17 @@
 			package = 4990BD7E2980F56000D2B4D9 /* XCRemoteSwiftPackageReference "UnifiedBlurHash" */;
 			productName = UnifiedBlurHash;
 		};
-/* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		49A9AC6A297931C10089C31A /* Wallpaper.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				49A9AC6B297931C10089C31A /* Wallpaper.xcdatamodel */,
-			);
-			currentVersion = 49A9AC6B297931C10089C31A /* Wallpaper.xcdatamodel */;
-			path = Wallpaper.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+		49D80AC729839E1E00748119 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49D80AC629839E1E00748119 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
 		};
-/* End XCVersionGroup section */
+		49D80ACA298483CD00748119 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49D80AC9298483CD00748119 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4910C7B22971D628009080DA /* Project object */;
 }

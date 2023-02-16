@@ -9,21 +9,17 @@ import SwiftUI
 
 @main
 struct BetterWallpapersApp: App {
-    @StateObject var fetcher = WallpaperFetcher()
-    @StateObject var downloader = WallpaperDownloader()
-    @StateObject var settings = WallpaperSettings()
-    var manager = WallpaperManager(fetcher: WallpaperFetcher(), downloader: WallpaperDownloader(), scheduler: WallpaperScheduler(), settings: WallpaperSettings())
-    
-    init() {
-        manager.scheduleRandomWallpaper()
-    }
+    @StateObject var controller = WallpaperController()
+    @StateObject var settings = Settings()
     
     var body: some Scene {
         MenuBarExtra("Better Wallpapers", systemImage: "bolt.square.fill") {
             ContentView()
-                .environmentObject(fetcher)
-                .environmentObject(downloader)
+                .environmentObject(controller)
                 .environmentObject(settings)
+                .onAppear {
+                    controller.scheduleNextWallpaper(interval: settings.refreshInterval)
+                }
         }
         .menuBarExtraStyle(.window)
     }
