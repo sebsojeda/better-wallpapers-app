@@ -11,12 +11,14 @@ import SwiftUI
 struct BetterWallpapersApp: App {
     @StateObject var controller = WallpaperController()
     @StateObject var settings = Settings()
+    @StateObject var favorites = Favorites()
     
-    var body: some Scene {
-        MenuBarExtra("Better Wallpapers", systemImage: "bolt.square.fill") {
+    var body: some Scene {        
+        MenuBarExtra("Better Wallpapers", image: "w.fill") {
             ContentView()
                 .environmentObject(controller)
                 .environmentObject(settings)
+                .environmentObject(favorites)
                 .onAppear {
                     controller.scheduleNextWallpaper(interval: settings.refreshInterval)
                 }

@@ -12,14 +12,18 @@ struct NavigationView: View {
     
     var body: some View {
         HStack {
-            Text("Better Wallpapers")
-                .font(.headline)
+            Image("w.fill")
             
             Spacer()
             
             HStack {
                 Button(action: { transitionTo(.wallpaper) }) {
                     Image(systemName: "square.3.layers.3d")
+                }
+                .buttonStyle(.plain)
+                
+                Button(action: { transitionTo(.favorites) }) {
+                    Image(systemName: "bookmark")
                 }
                 .buttonStyle(.plain)
                 
@@ -31,7 +35,6 @@ struct NavigationView: View {
         }
         .padding()
         .zIndex(1)
-        .background(Color(.textBackgroundColor))
     }
     
     private func transitionTo(_ tab: Tab) {

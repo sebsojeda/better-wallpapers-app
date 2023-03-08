@@ -15,6 +15,10 @@ struct SettingsView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            Text("Settings")
+                .font(.headline)
+                .padding([.horizontal, .bottom])
+            
             VStack(alignment: .leading) {
                 LaunchAtLogin.Toggle()
                 
@@ -30,12 +34,19 @@ struct SettingsView: View {
                     controller.scheduleNextWallpaper(interval: interval.id)
                 }
                 .frame(width: 150)
+                
+                Button("Quit", action: quit)
+                    .padding(.top)
+                    .buttonStyle(.plain)
             }
             .padding(.horizontal)
             
             TagsView()
         }
-        .background(Color(.textBackgroundColor))
+    }
+    
+    func quit() {
+        NSApplication.shared.terminate(self)
     }
 }
 

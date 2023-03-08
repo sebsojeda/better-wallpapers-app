@@ -47,6 +47,8 @@ class Settings: ObservableObject {
         Tag(title: "Quotes", image: "quotes", checked: true),
         Tag(title: "Animals", image: "animals", checked: true),
         Tag(title: "Graphics", image: "graphics", checked: true),
-        Tag(title: "Travel", image: "travel", checked: true)
+        Tag(title: "Travel", image: "travel", checked: true),
+        Tag(title: "Architecture", image: "architecture", checked: true),
+        Tag(title: "Black and White", image: "blackandwhite", checked: true)
     ]
 }

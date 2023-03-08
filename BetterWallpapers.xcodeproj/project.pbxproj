@@ -13,6 +13,8 @@
 		4910C7CF2971EB51009080DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910C7CE2971EB51009080DA /* ContentView.swift */; };
 		493B874F29774F6800B6E525 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B874E29774F6800B6E525 /* Wallpaper.swift */; };
 		493B87512977520100B6E525 /* WallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B87502977520100B6E525 /* WallpaperView.swift */; };
+		4963BEBC29B85A4D004E4C4F /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963BEBB29B85A4D004E4C4F /* Favorites.swift */; };
+		4963BEBE29B85A66004E4C4F /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963BEBD29B85A66004E4C4F /* FavoritesView.swift */; };
 		4990BD802980F56000D2B4D9 /* UnifiedBlurHash in Frameworks */ = {isa = PBXBuildFile; productRef = 4990BD7F2980F56000D2B4D9 /* UnifiedBlurHash */; };
 		4990BD822980F9FF00D2B4D9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BD812980F9FF00D2B4D9 /* Settings.swift */; };
 		4990BD872981154900D2B4D9 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BD862981154900D2B4D9 /* Scheduler.swift */; };
@@ -37,6 +39,8 @@
 		4910C7CE2971EB51009080DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		493B874E29774F6800B6E525 /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
 		493B87502977520100B6E525 /* WallpaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperView.swift; sourceTree = "<group>"; };
+		4963BEBB29B85A4D004E4C4F /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		4963BEBD29B85A66004E4C4F /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		4990BD812980F9FF00D2B4D9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4990BD862981154900D2B4D9 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		4990BD882981D9C200D2B4D9 /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 				49D80AC3298271F500748119 /* Controllers */,
 				49D80ABA2981DC8700748119 /* Utils */,
 				4990BD812980F9FF00D2B4D9 /* Settings.swift */,
+				4963BEBB29B85A4D004E4C4F /* Favorites.swift */,
 				4910C7C12971D629009080DA /* Assets.xcassets */,
 				4910C7C62971D629009080DA /* BetterWallpapers.entitlements */,
 				4910C7C32971D629009080DA /* Preview Content */,
@@ -129,6 +134,7 @@
 				49A9AC6629791B200089C31A /* ImageView.swift */,
 				493B87502977520100B6E525 /* WallpaperView.swift */,
 				49A9AC6F2979E3E20089C31A /* ActionsView.swift */,
+				4963BEBD29B85A66004E4C4F /* FavoritesView.swift */,
 				49A9AC75297BC4E00089C31A /* SettingsView.swift */,
 				49D80AC42982794900748119 /* TagsView.swift */,
 			);
@@ -234,6 +240,7 @@
 				4990BD872981154900D2B4D9 /* Scheduler.swift in Sources */,
 				49D80AC22982707100748119 /* WallpaperController.swift in Sources */,
 				49A9AC6729791B200089C31A /* ImageView.swift in Sources */,
+				4963BEBC29B85A4D004E4C4F /* Favorites.swift in Sources */,
 				4990BD822980F9FF00D2B4D9 /* Settings.swift in Sources */,
 				49A9AC74297BBD360089C31A /* NavigationView.swift in Sources */,
 				4910C7BE2971D628009080DA /* BetterWallpapersApp.swift in Sources */,
@@ -242,6 +249,7 @@
 				49D80ABC2981E65D00748119 /* Downloader.swift in Sources */,
 				49D80AC52982794900748119 /* TagsView.swift in Sources */,
 				493B874F29774F6800B6E525 /* Wallpaper.swift in Sources */,
+				4963BEBE29B85A66004E4C4F /* FavoritesView.swift in Sources */,
 				493B87512977520100B6E525 /* WallpaperView.swift in Sources */,
 				4910C7CF2971EB51009080DA /* ContentView.swift in Sources */,
 				49A9AC76297BC4E00089C31A /* SettingsView.swift in Sources */,
@@ -380,6 +388,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BetterWallpapers/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Better Wallpapers 2 ";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,6 +420,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BetterWallpapers/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Better Wallpapers 2 ";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (

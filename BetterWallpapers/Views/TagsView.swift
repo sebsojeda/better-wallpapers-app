@@ -29,12 +29,10 @@ struct TagsView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 135, height: 90)
                             .clipped()
-                            .overlay {
-                                Color.black.blendMode(BlendMode.softLight)
-                            }
                             .overlay(alignment: .bottomLeading) {
                                 Text(settings.tags[i].title)
                                     .foregroundColor(.white)
+                                    .shadow(color: .black, radius: 1, x: 0, y: 1)
                                     .padding()
                             }
                             .overlay(alignment: .topTrailing) {
@@ -51,14 +49,15 @@ struct TagsView: View {
                                         .padding()
                                 }
                             }
+                            
                     }
                     .frame(width: 135, height: 90)
                     .buttonStyle(.plain)
+                    .cornerRadius(5)
                 }
             }
         }
         .padding()
-        .background(Color(.textBackgroundColor))
     }
     
     func toggleTag(_ index: Int) {

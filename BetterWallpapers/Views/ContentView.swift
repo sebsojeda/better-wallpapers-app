@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum Tab {
-    case wallpaper, settings
+    case wallpaper, favorites, settings
 }
 
 struct ContentView: View {
@@ -22,7 +22,14 @@ struct ContentView: View {
                 if currentTab == .wallpaper {
                     WallpaperView()
                         .transition(.asymmetric(
-                            insertion: .move(edge: .top),
+                            insertion: .move(edge: .bottom),
+                            removal: .opacity.combined(with: .move(edge: .top))))
+                }
+                
+                if currentTab == .favorites {
+                    FavoritesView(currentTab: $currentTab)
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .bottom),
                             removal: .opacity.combined(with: .move(edge: .top))))
                 }
                 
@@ -30,13 +37,12 @@ struct ContentView: View {
                     SettingsView()
                         .transition(.asymmetric(
                             insertion: .move(edge: .bottom),
-                            removal: .opacity.combined(with: .move(edge: .bottom))))
+                            removal: .opacity.combined(with: .move(edge: .top))))
                 }
             }
             
             Spacer()
         }
-        .background(Color(.textBackgroundColor))
         .frame(width: 455, height: 420)
     }
     

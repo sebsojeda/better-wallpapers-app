@@ -16,8 +16,8 @@ struct Wallpaper: Identifiable, Codable {
     let previewUrl: URL
     let downloadUrl: URL
     
-    static let defaultWallpaper = Wallpaper(id: 1,
-                                            authorUrl: nil,
+    static let defaultWallpaper = Wallpaper(id: 11,
+                                            authorUrl: URL(string: "https://unsplash.com/@wonderwallphotos")!,
                                             authorName: "Zach Kessinger",
                                             blurHash: "LjJ8w_t7s:of%%ayE2js?Hj]fiax",
                                             externalId: "awvl2nzv1y5kvuhnndaw",

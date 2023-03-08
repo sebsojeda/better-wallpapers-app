@@ -17,19 +17,18 @@ struct ActionsView: View {
             
             Spacer()
             
-            Button("Quit", action: quit)
+            Button("Download", action: downloadWallpaper)
                 .buttonStyle(.plain)
         }
         .padding()
-        .background(Color(.textBackgroundColor))
     }
     
     func setWallpaper() {
-        controller.downloadWallpaper()
+        controller.setWallpaper()
     }
     
-    func quit() {
-        NSApplication.shared.terminate(self)
+    func downloadWallpaper() {
+        controller.downloadWallpaper()
     }
     
 }

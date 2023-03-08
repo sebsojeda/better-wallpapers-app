@@ -8,7 +8,7 @@
 import Foundation
 
 enum RefreshInterval: String, CaseIterable, Identifiable {
-    case hourly, daily, weekly
+    case daily, weekly
     var id: Self { self }
 }
 
@@ -20,9 +20,6 @@ class Scheduler {
         
         var timeInterval: TimeInterval
         switch (interval.id) {
-        case .hourly:
-            timeInterval = TimeInterval(60 * 60)
-            break
         case .daily:
             timeInterval = TimeInterval(24 * 60 * 60)
             break
@@ -52,6 +49,9 @@ class Scheduler {
                 }
                 return
             }
+        } else {
+            completion()
+            UserDefaults.standard.set(String(Date().timeIntervalSince1970), forKey: "lastRunTimestamp")
         }
         
         Scheduler.timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { _ in

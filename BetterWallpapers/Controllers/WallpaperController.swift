@@ -9,10 +9,20 @@ import Foundation
 import SwiftUI
 
 class WallpaperController: ObservableObject {
-    private var endpoint = URLComponents(string: "https://www.betterwallpapers.app/api/random")!
+    private var endpoint: URLComponents
     
-    @Published var currentWallpaper = Wallpaper.defaultWallpaper
-    @Published var isLoading = false
+    @Published var currentWallpaper: Wallpaper
+    @Published var isLoading: Bool
+    
+    init() {
+        self.endpoint = URLComponents(string: "https://www.betterwallpapers.app/api/random")!
+        if let currentWallpaper = UserDefaults.standard.string(forKey: "currentWallpaper")?.data(using: .utf8) {
+            self.currentWallpaper = try! JSONDecoder().decode(Wallpaper.self, from: currentWallpaper)
+        } else {
+            self.currentWallpaper = Wallpaper.defaultWallpaper
+        }
+        self.isLoading = false
+    }
     
     func fetchRandomWallpaper() {
         isLoading.toggle()
@@ -43,12 +53,15 @@ class WallpaperController: ObservableObject {
             
             Task { @MainActor in
                 self.currentWallpaper = wallpaper!
+                if let data = try? JSONEncoder().encode(wallpaper) {
+                    UserDefaults.standard.set(String(data: data, encoding: .utf8), forKey: "currentWallpaper")
+                }
                 self.isLoading.toggle()
             }
         }
     }
 
-    func downloadWallpaper() {
+    func setWallpaper() {
         isLoading.toggle()
         
         Downloader().download(url: currentWallpaper.downloadUrl) { file, error in
@@ -88,6 +101,42 @@ class WallpaperController: ObservableObject {
             }
         }
     }
+    
+    func downloadWallpaper() {
+        isLoading.toggle()
+        
+        Downloader().download(url: currentWallpaper.downloadUrl) { file, error in
+            if error != nil {
+                // TODO: log error
+                Task { @MainActor in
+                    self.isLoading.toggle()
+                }
+                return
+            }
+            
+            do {
+                let downloadsDirectory = try FileManager.default.url(for: .downloadsDirectory,
+                                                                     in: .userDomainMask,
+                                                                     appropriateFor: nil,
+                                                                     create: false)
+                
+                let downloadUrl = downloadsDirectory.appendingPathComponent(file!.lastPathComponent)
+                
+                if !FileManager.default.fileExists(atPath: downloadUrl.path) {
+                    try FileManager.default.copyItem(at: file!, to: downloadUrl)
+                }
+                
+                Task { @MainActor in
+                    self.isLoading.toggle()
+                }
+            } catch {
+                Task { @MainActor in
+                    self.isLoading.toggle()
+                }
+            }
+        }
+    }
+
     
     func scheduleNextWallpaper(interval: RefreshInterval) {
         Scheduler().schedule(interval: interval) {
@@ -155,6 +204,9 @@ class WallpaperController: ObservableObject {
                     
                     Task { @MainActor in
                         self.currentWallpaper = wallpaper!
+                        if let data = try? JSONEncoder().encode(wallpaper) {
+                            UserDefaults.standard.set(String(data: data, encoding: .utf8), forKey: "currentWallpaper")
+                        }
                         self.isLoading.toggle()
                     }
                 }
