@@ -53,5 +53,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .environmentObject(WallpaperController())
             .environmentObject(Settings())
+            .environmentObject(Favorites())
     }
 }
