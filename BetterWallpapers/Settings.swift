@@ -43,7 +43,7 @@ class Settings: ObservableObject {
         Tag(title: "Space", image: "space", checked: true),
         Tag(title: "Abstract", image: "abstract", checked: true),
         Tag(title: "Patterns", image: "patterns", checked: true),
-        Tag(title: "Athletics", image: "athletics", checked: true),
+        Tag(title: "Sports", image: "sports", checked: true),
         Tag(title: "Quotes", image: "quotes", checked: true),
         Tag(title: "Animals", image: "animals", checked: true),
         Tag(title: "Graphics", image: "graphics", checked: true),
