@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "schedule",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/luoxiu/Schedule.git",
+      "state" : {
+        "revision" : "e388fcab1d870f32c0359a414fda81b8e81b98c9",
+        "version" : "2.1.1"
+      }
+    },
+    {
       "identity" : "unifiedblurhash",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/iankoex/UnifiedBlurHash",

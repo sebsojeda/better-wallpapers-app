@@ -15,6 +15,7 @@
 		493B87512977520100B6E525 /* WallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B87502977520100B6E525 /* WallpaperView.swift */; };
 		4963BEBC29B85A4D004E4C4F /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963BEBB29B85A4D004E4C4F /* Favorites.swift */; };
 		4963BEBE29B85A66004E4C4F /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963BEBD29B85A66004E4C4F /* FavoritesView.swift */; };
+		498EE2552A03395900EA82D8 /* Schedule in Frameworks */ = {isa = PBXBuildFile; productRef = 498EE2542A03395900EA82D8 /* Schedule */; };
 		4990BD802980F56000D2B4D9 /* UnifiedBlurHash in Frameworks */ = {isa = PBXBuildFile; productRef = 4990BD7F2980F56000D2B4D9 /* UnifiedBlurHash */; };
 		4990BD822980F9FF00D2B4D9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BD812980F9FF00D2B4D9 /* Settings.swift */; };
 		4990BD872981154900D2B4D9 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BD862981154900D2B4D9 /* Scheduler.swift */; };
@@ -59,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D80AC829839E1E00748119 /* LaunchAtLogin in Frameworks */,
+				498EE2552A03395900EA82D8 /* Schedule in Frameworks */,
 				49D80ACB298483CD00748119 /* URLImage in Frameworks */,
 				4990BD802980F56000D2B4D9 /* UnifiedBlurHash in Frameworks */,
 			);
@@ -177,6 +179,7 @@
 				4990BD7F2980F56000D2B4D9 /* UnifiedBlurHash */,
 				49D80AC729839E1E00748119 /* LaunchAtLogin */,
 				49D80ACA298483CD00748119 /* URLImage */,
+				498EE2542A03395900EA82D8 /* Schedule */,
 			);
 			productName = BetterWallpapers;
 			productReference = 4910C7BA2971D628009080DA /* BetterWallpapers.app */;
@@ -210,6 +213,7 @@
 				4990BD7E2980F56000D2B4D9 /* XCRemoteSwiftPackageReference "UnifiedBlurHash" */,
 				49D80AC629839E1E00748119 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 				49D80AC9298483CD00748119 /* XCRemoteSwiftPackageReference "url-image" */,
+				498EE2532A03395900EA82D8 /* XCRemoteSwiftPackageReference "Schedule" */,
 			);
 			productRefGroup = 4910C7BB2971D628009080DA /* Products */;
 			projectDirPath = "";
@@ -397,7 +401,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.betterwallpapers.BetterWallpapers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -430,7 +434,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.betterwallpapers.BetterWallpapers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -462,6 +466,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		498EE2532A03395900EA82D8 /* XCRemoteSwiftPackageReference "Schedule" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/luoxiu/Schedule.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		4990BD7E2980F56000D2B4D9 /* XCRemoteSwiftPackageReference "UnifiedBlurHash" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iankoex/UnifiedBlurHash";
@@ -489,6 +501,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		498EE2542A03395900EA82D8 /* Schedule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 498EE2532A03395900EA82D8 /* XCRemoteSwiftPackageReference "Schedule" */;
+			productName = Schedule;
+		};
 		4990BD7F2980F56000D2B4D9 /* UnifiedBlurHash */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4990BD7E2980F56000D2B4D9 /* XCRemoteSwiftPackageReference "UnifiedBlurHash" */;

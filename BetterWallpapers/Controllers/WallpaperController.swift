@@ -9,6 +9,10 @@ import Foundation
 import SwiftUI
 
 class WallpaperController: ObservableObject {
+    private let downloader = Downloader()
+    private let fetcher = Fetcher()
+    private let scheduler = Scheduler()
+    
     private var endpoint: URLComponents
     
     @Published var currentWallpaper: Wallpaper
@@ -42,7 +46,7 @@ class WallpaperController: ObservableObject {
         }
         endpoint.queryItems = queryItems
         
-        Fetcher().fetch(Wallpaper.self, endpoint: endpoint.url!.absoluteString) { wallpaper, error in
+        fetcher.fetch(Wallpaper.self, endpoint: endpoint.url!.absoluteString) { wallpaper, error in
             if error != nil {
                 // TODO: log error
                 Task { @MainActor in
@@ -64,7 +68,9 @@ class WallpaperController: ObservableObject {
     func setWallpaper() {
         isLoading.toggle()
         
-        Downloader().download(url: currentWallpaper.downloadUrl) { file, error in
+        scheduler.updateLastRunTimestamp()
+        
+        downloader.download(url: currentWallpaper.downloadUrl) { file, error in
             if error != nil {
                 // TODO: log error
                 Task { @MainActor in
@@ -105,7 +111,7 @@ class WallpaperController: ObservableObject {
     func downloadWallpaper() {
         isLoading.toggle()
         
-        Downloader().download(url: currentWallpaper.downloadUrl) { file, error in
+        downloader.download(url: currentWallpaper.downloadUrl) { file, error in
             if error != nil {
                 // TODO: log error
                 Task { @MainActor in
@@ -139,7 +145,7 @@ class WallpaperController: ObservableObject {
 
     
     func scheduleNextWallpaper(interval: RefreshInterval) {
-        Scheduler().schedule(interval: interval) {
+        scheduler.schedule(interval: interval) {
             Task { @MainActor in
                 self.isLoading.toggle()
             }
@@ -159,7 +165,7 @@ class WallpaperController: ObservableObject {
             }
             self.endpoint.queryItems = queryItems
             
-            Fetcher().fetch(Wallpaper.self, endpoint: self.endpoint.url!.absoluteString) {
+            self.fetcher.fetch(Wallpaper.self, endpoint: self.endpoint.url!.absoluteString) {
                 wallpaper, error in
                 
                 if error != nil {
@@ -170,7 +176,7 @@ class WallpaperController: ObservableObject {
                     return
                 }
                 
-                Downloader().download(url: wallpaper!.downloadUrl) { file, error in
+                self.downloader.download(url: wallpaper!.downloadUrl) { file, error in
                     if error != nil {
                         // TODO: log error
                         Task { @MainActor in

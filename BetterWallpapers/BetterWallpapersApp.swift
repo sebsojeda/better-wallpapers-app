@@ -13,6 +13,9 @@ struct BetterWallpapersApp: App {
     @StateObject var settings = Settings()
     @StateObject var favorites = Favorites()
     
+    init() {
+    }
+    
     var body: some Scene {        
         MenuBarExtra("Better Wallpapers", image: "w.fill") {
             ContentView()

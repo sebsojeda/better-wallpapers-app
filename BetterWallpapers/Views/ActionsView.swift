@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ActionsView: View {
     @EnvironmentObject var controller: WallpaperController
+    @EnvironmentObject var settings: Settings
         
     var body: some View {
         HStack {
@@ -25,6 +26,7 @@ struct ActionsView: View {
     
     func setWallpaper() {
         controller.setWallpaper()
+        controller.scheduleNextWallpaper(interval: settings.refreshInterval)
     }
     
     func downloadWallpaper() {

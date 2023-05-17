@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Schedule
 
 enum RefreshInterval: String, CaseIterable, Identifiable {
     case daily, weekly
@@ -13,50 +14,57 @@ enum RefreshInterval: String, CaseIterable, Identifiable {
 }
 
 class Scheduler {
-    static private var timer: Timer = Timer()
+    private var plan: Task?
     
     func schedule(interval: RefreshInterval, completion: @escaping () -> Void) {
-        Scheduler.timer.invalidate()
+        if plan != nil {
+            plan!.cancel()
+        }
         
-        var timeInterval: TimeInterval
+        var timeInterval: Interval
         switch (interval.id) {
         case .daily:
-            timeInterval = TimeInterval(24 * 60 * 60)
+            timeInterval = 1.days
             break
         case .weekly:
-            timeInterval = TimeInterval(7 * 24 * 60 * 60)
+            timeInterval = 1.week
             break
         }
         
-        if let lastRunTimestamp = UserDefaults.standard.string(forKey: "lastRunTimestamp"),
+        if let lastRunTimestamp = getLastRunTimestamp(),
            let timeIntervalSince1970 = TimeInterval(lastRunTimestamp) {
             
             let dateOfLastRun = Date(timeIntervalSince1970: timeIntervalSince1970)
             let timeIntervalSinceLastRun = Date().timeIntervalSince(dateOfLastRun)
             
-            if timeIntervalSinceLastRun > timeInterval {
+            if timeIntervalSinceLastRun > timeInterval.asSeconds() {
                 completion()
-                UserDefaults.standard.set(String(Date().timeIntervalSince1970), forKey: "lastRunTimestamp")
+                updateLastRunTimestamp()
             } else {
-                let nextRun = timeInterval - timeIntervalSinceLastRun
-                Scheduler.timer = Timer.scheduledTimer(withTimeInterval: nextRun, repeats: false) { _ in
+                let nextRun = (timeInterval.asSeconds() - timeIntervalSinceLastRun).seconds
+                
+                plan = Plan.after(nextRun, repeating: timeInterval).do {
                     completion()
-                    UserDefaults.standard.set(String(Date().timeIntervalSince1970), forKey: "lastRunTimestamp")
-                    Scheduler.timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { _ in
-                        completion()
-                        UserDefaults.standard.set(String(Date().timeIntervalSince1970), forKey: "lastRunTimestamp")
-                    }
+                    self.updateLastRunTimestamp()
                 }
                 return
             }
         } else {
             completion()
-            UserDefaults.standard.set(String(Date().timeIntervalSince1970), forKey: "lastRunTimestamp")
+            self.updateLastRunTimestamp()
         }
         
-        Scheduler.timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { _ in
+        plan = Plan.every(timeInterval).do {
             completion()
-            UserDefaults.standard.set(String(Date().timeIntervalSince1970), forKey: "lastRunTimestamp")
+            self.updateLastRunTimestamp()
         }
+    }
+    
+    func getLastRunTimestamp() -> String? {
+        UserDefaults.standard.string(forKey: "lastRunTimestamp")
+    }
+    
+    func updateLastRunTimestamp() {
+        UserDefaults.standard.set(String(Date().timeIntervalSince1970), forKey: "lastRunTimestamp")
     }
 }
